@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --main-color:  #2A7AE4;
+  --secondary-color: #EAF2FD;
+  --back-color: #F5F5F5;
+  --font-name: "Raleway";
+  --font-color: #464646;
+}
+
+.dark-theme {
+  --main-color: #bd34b8;
+  --secondary-color: #733d70; 
+  --back-color: #220d45; 
+  --font-name: "Noto Serif";
+  --font-color: #fff;
+}
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--back-color);
+  font-family: var(--font-name);
+  color: var(--font-color);
+
+  h1{
+    text-align: center;
+  }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--font-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/*Estilos solo para el header*/
+header {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+    
+    nav {
+      display: flex;
+      gap: 1em;
+      
+      a {
+        text-decoration: none;
+
+        &:last-child {
+          font-weight: 700;
+        }
+
+        &.link-menu {
+          display: none;
+
+          @media (min-width: 968px) {
+            display: inline-block;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+
+    button.btn-theme {
+      background-color: var(--main-color);
+      color: white;
+      border: 1px solid #888;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+}
+
+/*Estilos para el hero*/
+.hero {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+
+    @media (min-width:968px) {
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 2em;
+    }
+
+    .hero-image {
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+
+        @media (min-width:968px) {
+          width: 250px;
+          height: 250px;
+        }
+      }
+    }
+
+    .hero-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+  
+      p, nav {
+        font-size: 20px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+    
+        a{
+          display: flex;
+          align-items: center;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+/* Estilos para la sección "Sobre Mí" */
+.about-me {
+  display: flex;
+  background-color: var(--secondary-color);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  p {
+    font-weight: 500;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+/* Estilos para la sección de skills */
+.skills {
+  
+  .container{
+    display: flex;
+    padding: 1em;
+    flex-direction: column;
+    gap: 1em;
+    
+    h2 {
+      text-align: center;
+    }
+
+    div {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1em;
+
+      article {
+        background-color: var(--secondary-color);
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 1em;
+
+        i {
+          color: var(--main-color);
+          font-size: 32px;
+          text-align: center;
+        }
+
+        h3 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+/* Estilos para la sección de hobbies */
+.hobbies {
+
+  .container {
+    display: flex;
+    padding: 1em;
+    flex-direction: column;
+    gap: 1em;
+
+    h2 {
+      text-align: center;
+    }
+    
+    div {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1em;
+
+      article {
+        background-color: var(--secondary-color);
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        padding: 1em;
+
+        i {
+          color: var(--main-color);
+          font-size: 32px;
+          text-align: center;
+        }
+
+        h3 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+/* Estilos para la sección de formación*/
+.formacion {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    h2 {
+      font-size: 2em; 
+      text-align: center; 
+      color:var(--back-color); 
+    }
+
+    div {
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      justify-content: center;
+      align-items: center;
+    
+      article {
+        background-color: var(--secondary-color);
+        padding: 16px; 
+        margin: 16px; 
+        text-align: center; 
+    
+        img {
+          width: 40%;
+          height: 40%;
+        }
+      }
+    }
+  }
+}
+
+/*Estilos para la sección de esperienca*/
+.projects {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    h2 {
+      text-align: center;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      article {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+
+        @media (min-width: 968px) {
+          flex-direction: row;
+          
+          &:nth-child(even) {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+          }
+        }
+
+        div {
+          display: flex;
+          justify-content: center;
+
+          img {
+            @media (min-width: 968px) {
+              width: 600px;
+            }
+          }
+
+          .buttons {
+            display: flex;
+            flex-direction: row;
+            padding: 1em;
+
+            button {
+              border: none;
+              padding: 0.5em 1em;
+              cursor: pointer;
+
+              &:first-child {
+                background-color: inherit;
+                color: var(--main-color);
+                border: 1px solid var(--main-color);
+              }
+
+              &:last-child {
+                background-color: var(--main-color);
+                color:var(--back-color);
+              }
+            }  
+          }  
+        }
+      }
+    }
+  }
+}
+
+/* Estilos para la sección de contacto */
+.contact {
+  background-color:var(--secondary-color);
+  padding: 2em;
+
+  .container {
+    display: flex;
+    text-align: start;
+    justify-content: center;
+    gap: 1em;
+
+    img {
+      display: none
+    }
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 1em;
+
+      input, textarea {
+        padding: 1em;
+        border: none;
+        border-radius: 4px;
+        background-color: var(--back-color);
+        transition: border-color 0.3s;
+        outline: none;
+      }
+
+      .input-email {
+        border-bottom:var(--main-color);
+      }
+
+      button {
+        width: 150px;
+        height: 51px;
+        background-color: var(--main-color);
+        border: none;
+        color:var(--back-color);
+      }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .container img {
+      display: flex;
+    }
+}
+}
+
+/* Estilos para el footer */
+.footer {
+  background-color:var(--main-color); 
+  color:var(--secondary-color);
+  padding: 20px; 
+
+  h3 {
+    font-size: 18px; 
+    margin-bottom: 10px; 
+    text-align: center;
+  }
+
+  p {
+    font-size: 19px; 
+    text-align: center;
+  }
+}
